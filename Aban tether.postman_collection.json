@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "db363040-366c-4d93-bc40-b8327cf3ac2a",
+		"name": "Aban tether",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8271865"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/v1/login/access-token",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"login",
+						"access-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Me",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzc2MzgxMDMsInN1YiI6IjhhNzY0NGE3LTZlOTQtNGQ0OS04Y2Q1LTU5ZDhmODlkMjgwNSJ9.LSkiCP4xRrcpEteFAhQGZAzETKVK3ck5FuvbPMLbWCU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/api/v1/users/me",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Purchase",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzc3MTAwODQsInN1YiI6IjZkY2VhOWYwLWZhYzAtNDI0Mi04NjM5LWE2NjQzYTM3ZmNkNSJ9.x7P3Q9N9pgUL0vqcQ2pzY79PVS-3ImM__q7hsOAOLgI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\" : \"1\",\n    \"market\" : \"ABANUSD\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/v1/purchases",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"purchases"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
